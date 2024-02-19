@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Strona główna super hiper mega aplikacji</h1>
+    <button>
+        <a th:href="@{/register}">Zarejestruj się</a>
+    </button>
+    <br>
+    <button>
+        <a th:href="@{/login}">Zaloguj się</a>
+    </button>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ustawienia</title>
+    <link rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="container">
+    <h1 class="login-header">Ustawienia</h1>
+    <form class="login-form" th:action="@{/settings}" method="post" th:object="${user}">
+        <label>
+            <input th:field="*{firstName}" placeholder="Imię" class="form-item">
+        </label><br>
+        <label>
+            <input th:field="*{lastName}" placeholder="Nazwisko" class="form-item">
+        </label><br>
+        <label>
+            <input th:field="*{oldPassword}" placeholder="Stare hasło" type="password" class="form-item">
+        </label><br>
+        <label>
+            <input th:field="*{newPassword}" placeholder="Nowe hasło" type="password" class="form-item">
+        </label><br>
+        <button type="submit" class="form-item">Zapisz</button>
+    </form>
+    <div th:if="${param.error}" class="alert alert-danger">
+        Obecne hasło nie zgadza sie z podanym
+    </div>
+</div>
+</body>
+</html>
