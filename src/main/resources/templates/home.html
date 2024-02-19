@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel użytkownika</title>
+</head>
+<body>
+    <h1 th:text="|Witaj ${#authentication.name}|"></h1>
+    <button>
+        <a th:href="@{/settings}">Ustawienia</a>
+    </button>
+    <button th:if="${isAdmin}">
+        <a th:href="@{/admin}">Panel admina</a>
+    </button>
+    <br>
+</body>
+</html>

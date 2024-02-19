@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Zaloguj się</title>
+    <link rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="container">
+    <h1 class="login-header">Zaloguj się</h1>
+    <div th:if="${param.successfull}">
+        Użytkownik został zarejestrowany
+    </div>
+    <form class="login-form" th:action="@{/login}" method="post">
+        <input name="username" placeholder="nazwa użytkownika" class="form-item"><br>
+        <input name="password" placeholder="hasło" type="password" class="form-item"><br>
+        <button type="submit" class="form-item">Zaloguj się</button>
+    </form>
+    <p>
+        Nie masz jeszcze konta? <a href="#" th:href="@{/register}">Zarejestruj się.</a>
+    </p>
+</div>
+</body>
+</html>

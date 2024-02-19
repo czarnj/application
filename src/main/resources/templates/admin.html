@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel administracyjny</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Panel administracyjny</h1>
+    <h2>Lista użytkowników</h2>
+    <ul>
+        <li th:each="user: ${users}">
+            <span th:text="|Użytkownik: ${user.username}|"></span>
+            <span th:text="|Role: ${user.roles}|"></span>
+            <button>
+                <a href="#" th:href="@{/admin/edit(id=${user.id})}">Edytuj role</a>
+            </button>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
